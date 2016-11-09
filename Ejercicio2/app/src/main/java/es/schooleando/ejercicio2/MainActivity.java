@@ -1,12 +1,9 @@
 package es.schooleando.ejercicio2;
 
-import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
-import static android.os.SystemClock.sleep;
 
 public class MainActivity extends AppCompatActivity {
     private Button botonDescarga;
@@ -19,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickBotonDescarga(View view) {
-        new Thread(new Runnable() {
+
+       //No podemos modificar el botón desde otro thread!
+        /*new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -28,7 +27,12 @@ public class MainActivity extends AppCompatActivity {
                 botonDescarga.setEnabled(false);
             }
 
-        }).start();
+        }).start();*/
+
+        //Instancio mi clase DescargaAsyncTask para ejecutar la tarea (espera y actualización del botón) en el background thread.
+        //Paso al constructor esta activity Main y el botón para poder actualizarlo
+        DescargaAsyncTask descargaAsync = new DescargaAsyncTask(this, botonDescarga);
+        descargaAsync.execute("Descargar");
     }
 
 }
