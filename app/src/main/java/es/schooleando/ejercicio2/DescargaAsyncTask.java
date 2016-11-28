@@ -61,7 +61,7 @@ public class DescargaAsyncTask extends AsyncTask<String, Integer, String[]> {
 
     @Override
     protected void onProgressUpdate(Integer... values) {
-        //Actualizar barra de progreso y texto
+        //Actualizar barra de progreso y texto:
         progreso.setProgress(values[0]);
         texto.setText(values[0] + "/100");
     }
