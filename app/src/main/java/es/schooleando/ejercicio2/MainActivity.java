@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //Engancho las vistas
         botonDescarga = (Button)findViewById(R.id.botonDescarga);
         progress = (ProgressBar)findViewById(R.id.progress);

@@ -51,7 +51,7 @@ public class DescargaAsyncTask extends AsyncTask<String, Integer, String[]> {
     @Override
     protected void onPostExecute(String[] strings) {
 
-        //Actualizo el botón y el progreso después de ejecutar la tarea del background thread
+        //Actualizo el botón y el progreso después de ejecutar la tarea del background thread:
         Toast.makeText(activity, "Descarga realizada", Toast.LENGTH_SHORT).show();
         botonDescarga.setText("Descargar");
         botonDescarga.setEnabled(true);
@@ -68,7 +68,7 @@ public class DescargaAsyncTask extends AsyncTask<String, Integer, String[]> {
 
     @Override
     protected void onCancelled() {
-        //Actualizo el botón y el progreso si se cancela
+        //Actualizo el botón y el progreso si se cancela:
         Toast.makeText(activity, "Descarga cancelada", Toast.LENGTH_SHORT).show();
         botonDescarga.setText("Descargar");
         botonDescarga.setEnabled(true);
